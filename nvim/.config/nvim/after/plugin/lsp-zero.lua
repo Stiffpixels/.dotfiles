@@ -36,8 +36,12 @@ lsp_config.dartls.setup {
 lsp_config.gopls.setup{}
 lsp_config.htmx.setup{}
 lsp_config.templ.setup{}
-lsp_config.html.setup{}
-lsp_config.phpactor.setup{}
+lsp_config.html.setup{
+    filetypes = {"blade", "html"}
+}
+lsp_config.intelephense.setup{
+    filetypes = {"php"}
+}
 
 local cmp = require('cmp')
 
