@@ -8,7 +8,7 @@ local lsp_attach = function(client, bufnr)
   vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts) vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
   vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
   vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts) vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-  vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+  -- vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
   vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
   vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
   vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
@@ -22,26 +22,32 @@ lsp_zero.extend_lspconfig({
   capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
 
-local lsp_config = require("lspconfig")
+local lsp_config = vim.lsp.config
 
-lsp_config.ts_ls.setup{}
-lsp_config.emmet_language_server.setup{
+lsp_config('emmet_language_server', {
     filetypes = {"css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact", "templ", "php", "blade"}
-}
+})
 
-lsp_config.dartls.setup {
+lsp_config('dartls',{
     cmd={"/usr/bin/dart", "language-server", "--protocol=lsp"}
-}
+})
 
-lsp_config.gopls.setup{}
-lsp_config.htmx.setup{}
-lsp_config.templ.setup{}
-lsp_config.html.setup{
-    filetypes = {"blade", "html"}
-}
-lsp_config.intelephense.setup{
+lsp_config('gopls', {})
+-- lsp_config.htmx.setup{}
+--
+lsp_config('templ', {})
+lsp_config('html', {
+    filetypes = {"blade", "html", "css"}
+})
+
+lsp_config('lua_ls', {})
+lsp_config('intelephense',{
     filetypes = {"php"}
-}
+})
+
+lsp_config('ts_ls', {
+    filetypes = {"javascript", "javascriptreact", "typescriptreact", "typescript"}
+});
 
 local cmp = require('cmp')
 
@@ -58,3 +64,4 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({}),
 })
 
+vim.lsp.set_log_level("off")
