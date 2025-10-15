@@ -22,6 +22,17 @@ lsp_zero.extend_lspconfig({
   capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
 
+-- vim.lsp.config('*', {
+--   capabilities = {
+--     textDocument = {
+--       semanticTokens = {
+--         multilineTokenSupport = true,
+--       }
+--     }
+--   },
+--   root_markers = { '.git' },
+-- })
+
 local lsp_config = vim.lsp.config
 
 lsp_config('emmet_language_server', {
@@ -48,6 +59,15 @@ lsp_config('intelephense',{
 lsp_config('ts_ls', {
     filetypes = {"javascript", "javascriptreact", "typescriptreact", "typescript"}
 });
+
+vim.lsp.enable('emmet_language_server');
+vim.lsp.enable('dartls');
+vim.lsp.enable('gopls');
+vim.lsp.enable('templ');
+vim.lsp.enable('html');
+vim.lsp.enable('lua_ls');
+vim.lsp.enable('intelephense');
+vim.lsp.enable('ts_ls');
 
 local cmp = require('cmp')
 
