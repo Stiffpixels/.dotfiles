@@ -74,6 +74,7 @@ local cmp = require('cmp')
 cmp.setup({
   sources = {
     {name = 'nvim_lsp'},
+    -- {name = "codeium"},
   },
   snippet = {
     expand = function(args)
@@ -83,5 +84,6 @@ cmp.setup({
   },
   mapping = cmp.mapping.preset.insert({}),
 })
+
 
 vim.lsp.set_log_level("off")
