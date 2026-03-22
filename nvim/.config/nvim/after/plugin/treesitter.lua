@@ -1,4 +1,4 @@
-local treesitter = require'nvim-treesitter.configs'
+local treesitter = require'nvim-treesitter.config'
 treesitter.setup {
   -- A list of parser names, or "all" (the listed parsers MUST always be installed)
   ensure_installed = {"yaml", "go", "typescript", "javascript", "html","css", "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
@@ -32,7 +32,7 @@ treesitter.setup {
   }
 }
 
-local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+local parser_config = require "nvim-treesitter.parsers"
 parser_config.blade = {
   install_info = {
     url = "https://github.com/EmranMR/tree-sitter-blade",
