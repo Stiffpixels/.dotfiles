@@ -19,3 +19,5 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8 
 
 vim.g.leader = " "
+
+vim.o.winborder = 'rounded'
