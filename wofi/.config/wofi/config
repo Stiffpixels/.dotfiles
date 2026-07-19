@@ -3,5 +3,5 @@ mode=drun
 width=35%
 lines=12
 line_wrap=word
-term=foot
+term=kitty
 location=center

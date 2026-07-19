@@ -47,6 +47,8 @@ local browser = "vivaldi"
 
 local emojiPicker = "wofi-emoji"
 
+local notificationDaemon = "mako"
+
 --################
 
 --## AUTOSTART ###
@@ -462,4 +464,5 @@ hl.on("hyprland.start", function()
     hl.exec_cmd(statusBar)
     hl.exec_cmd("[workspace 1 silent] " + terminal)
     hl.exec_cmd("[workspace 2 silent] " + browser)
+    h1.exec_cmd(notificationDaemon)
 end)
