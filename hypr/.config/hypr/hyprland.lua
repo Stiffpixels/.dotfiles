@@ -10,7 +10,6 @@
 
 --###############
 
-local _,_ = pcall(require, "device_config")
 local colors = require("colors")
 
 --###############
@@ -466,3 +465,5 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("[workspace 2 silent] " + browser)
     h1.exec_cmd(notificationDaemon)
 end)
+
+local _,_ = pcall(require, "device_config")
