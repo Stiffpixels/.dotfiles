@@ -1,0 +1,28 @@
+window {
+    background-color: rgba(40, 40, 40, 0.9);
+    border-radius: 0.75em;
+}
+
+#input {
+    border-radius: 0.5em;
+    background-color: #3c3836;
+    border-color: #458588;
+    margin-bottom: 0.5em;
+}
+
+#input:focus, #input:active {
+    outline: #458588;
+}
+
+#outer-box {
+    padding: 0.5em;
+}
+
+#entry{
+    margin-bottom: 0.5em;
+}
+
+#entry:focus, #entry:selected {
+    background-color: #458588;
+    border-radius: 0.35em;
+}

@@ -39,13 +39,13 @@ local terminal = "kitty"
 
 local fileManager = "thunar"
 
-local menu = "rofi -show drun"
+local menu = "wofi --show"
 
 local statusBar = "waybar"
 
 local browser = "vivaldi"
 
-local emojiPicker = "rofi -modi emoji -show emoji"
+local emojiPicker = "wofi-emoji"
 
 --################
 
@@ -459,7 +459,7 @@ hl.window_rule({
 
 -- Autostart
 hl.on("hyprland.start", function()
-    hl.exec_cmd("waybar")
+    hl.exec_cmd(statusBar)
     hl.exec_cmd("[workspace 1 silent] " + terminal)
     hl.exec_cmd("[workspace 2 silent] " + browser)
 end)
